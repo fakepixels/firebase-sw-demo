@@ -62,11 +62,6 @@ This is a demonstration application showcasing the integration of Firebase Authe
 
 - The app uses [Coinbase Smart Wallet](https://smartwallet.dev).
 
-## Styling
-
-- The app uses Tailwind CSS for styling
-- Custom gradient animations are implemented for the Create Wallet button
-
 ## Notes
 
 - Ensure all required environment variables are set for Firebase and Ethereum network configurations
