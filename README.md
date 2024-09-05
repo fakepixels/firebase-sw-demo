@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Firebase + SW Demo
+
+This is a demonstration application showcasing the integration of Firebase Authentication with Coinbase Smart Wallet functionality.
+
+## Features
+
+- Google Sign-In authentication using Firebase
+- Coinbase Smart Wallet integration for creating and managing wallets
+- Responsive UI with Tailwind CSS
+- Next.js framework for server-side rendering and routing
+
+## Technologies Used
+
+- Next.js
+- React
+- Firebase (Authentication)
+- Wagmi (Ethereum interactions)
+- Tailwind CSS
+- TypeScript
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository
+2. Install dependencies:
+   ```
+   npm install
+   ```
+3. Set up your Firebase project and add the configuration to `utils/firebaseConfig.ts`
+4. Set up your Wagmi configuration in `wagmi.ts` (ensure Coinbase Wallet connector is configured)
+5. Run the development server:
+   ```
+   npm run dev
+   ```
+6. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Project Structure
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- `pages/`: Next.js pages and API routes
+- `components/`: React components
+  - `Auth/`: Authentication-related components
+  - `CreateWalletButton.tsx`: Coinbase Smart Wallet creation button
+  - `WelcomeModal.tsx`: Modal displayed after user sign-in
+- `lib/`: Firebase initialization
+- `utils/`: Utility functions and configurations
+- `styles/`: Global styles and Tailwind CSS configuration
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Key Components
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `SignInButton`: Handles Google Sign-In
+- `SignOutButton`: Handles user sign-out
+- `CreateWalletButton`: Initiates Coinbase Smart Wallet creation
+- `WelcomeModal`: Displays a welcome message and wallet creation option
 
-## Learn More
+## Authentication Flow
 
-To learn more about Next.js, take a look at the following resources:
+1. User clicks "Sign in with Google" button
+2. Firebase handles authentication
+3. Upon successful sign-in, a welcome modal is displayed
+4. User can create a Coinbase Smart Wallet from the modal or main page
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Wallet Integration
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- The app uses [Coinbase Smart Wallet](https://smartwallet.dev).
 
-## Deploy on Vercel
+## Styling
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- The app uses Tailwind CSS for styling
+- Custom gradient animations are implemented for the Create Wallet button
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Notes
+
+- Ensure all required environment variables are set for Firebase and Ethereum network configurations
+- The app is set up to use the Ethereum mainnet, adjust the configuration in `wagmi.ts` if needed
