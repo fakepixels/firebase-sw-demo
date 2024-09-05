@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Google Sans', sans-serif;
+}
+
+/* ... other global styles ... */
